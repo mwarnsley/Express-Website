@@ -6,14 +6,16 @@ var express = require("express"),
 	port = 3000,
 	app = express();
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "jade");
+
 //setting up the middleware of node
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 //creating a route
 app.get("/", function(req, res){
-	res.send("Hello World");
-	console.log("Hello World");
+	res.render("index");
 });
 
 //running the server on port 3000
