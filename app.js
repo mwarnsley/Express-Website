@@ -10,6 +10,12 @@ var express = require("express"),
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+//creating a route
+app.get("/", function(req, res){
+	res.send("Hello World");
+	console.log("Hello World");
+});
+
 //running the server on port 3000
 app.listen(port);
 
