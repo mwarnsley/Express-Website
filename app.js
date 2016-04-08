@@ -18,7 +18,15 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //creating a route
 app.get("/", function(req, res){
-	res.render("index");
+	res.render("index", {title: "Welcome"});
+});
+
+app.get("/about", function(req, res){
+	res.render("about");
+});
+
+app.get("/contact", function(req, res){
+	res.render("contact");
 });
 
 //running the server on port 3000
