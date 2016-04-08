@@ -1,0 +1,25 @@
+{
+  "name": "expresswebsite",
+  "version": "1.0.0",
+  "description": "Simple ExpressJS Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwarnsley/Express-Website.git"
+  },
+  "author": "Marcus Warnsley",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "jade": "*",
+    "nodemailer": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/mwarnsley/Express-Website/issues"
+  },
+  "homepage": "https://github.com/mwarnsley/Express-Website#readme"
+}
