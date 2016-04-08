@@ -13,6 +13,9 @@ app.set("view engine", "jade");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+// set the static folder as the public folder
+app.use(express.static(path.join(__dirname, "public")));
+
 //creating a route
 app.get("/", function(req, res){
 	res.render("index");
