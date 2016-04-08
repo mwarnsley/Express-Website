@@ -30,7 +30,31 @@ app.get("/contact", function(req, res){
 });
 
 app.post("/contact/send", function(req, res){
-	console.log("TEST");
+	var transporter = nodemailer.createTransporter({
+		service: "Gmail",
+		auth: {
+			user: "marcus.warnsley@gmail.com".
+			pass: ""
+		}
+	});
+
+	var mailOptions = {
+		from: "Marcus Warnsley <marcus.warnsley@gmail.com>",
+		to: "marcus.warnsley@gmail.com",
+		subject: "Website Submission",
+		text: "You have a submission with the following details... Name: " +req.body.name + "Email: " +req.body.email+ "Message: " +req.body.message,
+		html: "<p>You have a submission with the following details...</p><ul><li>Name: "+req.body.name+"</li><li>Email: "+req.body.email+"</li><li>Message: "+req.body.message+"</li></ul>"
+	};
+
+	transporter.sendMail(mailOptions, function(erroe, info){
+		if(error){
+			console.log(error);
+			res.redirect('/');
+		}else{
+			console.log('Message Sent: '+ info.response);
+			res.redirect('/');
+		}
+	});
 });
 
 
